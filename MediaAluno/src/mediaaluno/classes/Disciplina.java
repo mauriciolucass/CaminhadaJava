@@ -2,11 +2,11 @@ package mediaaluno.classes;
 
 import java.util.Objects;
 
-public class Diciplina {
+public class Disciplina {
 	private String disciplina;
 	private double nota;
 	
-	public Diciplina() {
+	public Disciplina() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -39,7 +39,7 @@ public class Diciplina {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Diciplina other = (Diciplina) obj;
+		Disciplina other = (Disciplina) obj;
 		return Objects.equals(disciplina, other.disciplina)
 				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
 	}
