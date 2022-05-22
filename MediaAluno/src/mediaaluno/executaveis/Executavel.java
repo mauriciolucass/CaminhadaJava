@@ -61,7 +61,7 @@ public class Executavel {
 		}
 		for (Aluno aluno : alunos) {
 			if (aluno.getNome().equalsIgnoreCase("mauricio")) {
-				alunos.remove(alunos);
+				alunos.remove(aluno);
 				break;
 			} else {
 
