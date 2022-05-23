@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import mediaaluno.constantes.StatusAluno;
+
 public class Aluno extends Pessoa {
 	private String serieMatriculado;
 	private String dataMatricula;
@@ -57,15 +59,16 @@ public class Aluno extends Pessoa {
 
 	public String getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media <= 50) {
+		if (media >= 50) {
 			if (media >= 70) {
-				return "Aluno Aprovado";
+				return StatusAluno.APROVADO;
 			} else {
-				return "Aluno em Recuperação";
+				return StatusAluno.RECUPERACAO;
+				
 			}
 
 		} else {
-			return "Aluno Reprovado";
+			return StatusAluno.REPROVADO;
 		}
 	}
 
