@@ -1,6 +1,7 @@
 package mediaaluno.executaveis;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -12,16 +13,18 @@ import mediaaluno.constantes.StatusAluno;
 public class Executavel {
 	public static void main(String[] args) {
 		List<Aluno> alunos = new ArrayList<Aluno>();
-		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
-		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
-		List<Aluno> alunosReprovados = new ArrayList<Aluno>();
 		
+		HashMap<String , List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+		
+//		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
+//		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
+//		List<Aluno> alunosReprovados = new ArrayList<Aluno>();	
 		for (int qtd = 1; qtd <= 5; qtd++) {
 			String nome = JOptionPane.showInputDialog("nome do Aluno " + qtd + "?");
 			/*
 			 * String idade = JOptionPane.showInputDialog("idade ?"); String dataNascimento
 			 * = JOptionPane.showInputDialog(" data de nascimento"); String cpf =
-			 * JOptionPane.showInputDialog(" informe o cpf "); String rg =
+			 * JOptionPane.showInputDialog(" informe o cpf "); Seclipse-javadoc:%E2%98%82=MediaAluno/%5C/app%5C/eclipse%5C/plugins%5C/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.2.v20220201-1208%5C/jre%5C/lib%5C/jrt-fs.jar%60java.desktop=/module=/true=/=/javadoc_location=/https:%5C/%5C/docs.oracle.com%5C/en%5C/java%5C/javase%5C/17%5C/docs%5C/api%5C/=/%3Cjavax.swing(JOptionPane.class%E2%98%83JOptionPane~showInputDialog~Ljava.lang.Object;%E2%98%82java.lang.Stringtring rg =
 			 * JOptionPane.showInputDialog("informe o RG "); String mae =
 			 * JOptionPane.showInputDialog("nome da Mae ?"); String pai =
 			 * JOptionPane.showInputDialog("nome do pai ?"); String serie =
@@ -64,22 +67,27 @@ public class Executavel {
 
 			alunos.add(aluno1);
 		}
+		maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+		maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());
+		
 		for (Aluno aluno : alunos) {
 			if(aluno.getAlunoAprovado().equalsIgnoreCase(StatusAluno.APROVADO)) {
-				alunosAprovados.add(aluno);
+				maps.get(StatusAluno.APROVADO).add(aluno);
 				
 			}else if(aluno.getAlunoAprovado().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
-				alunosRecuperacao.add(aluno);
+				maps.get(StatusAluno.RECUPERACAO).add(aluno);
 				
 			}else {
-				alunosReprovados.add(aluno);
+				maps.get(StatusAluno.REPROVADO).add(aluno);
+				
 				
 			}
 		
 			
 		}
 		System.out.println("------------lista dos aprovados -------------");
-		for (Aluno aluno : alunosAprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.APROVADO)) {
 			System.out.println("Resultado :" + aluno.getAlunoAprovado());
 			System.out.println("media : "+ aluno.getMediaNota());
 			
@@ -87,14 +95,14 @@ public class Executavel {
 			
 		}
 		System.out.println("------------lista de recuperação-------------------------");
-		for (Aluno aluno : alunosRecuperacao) {
+		for (Aluno aluno : maps.get(StatusAluno.RECUPERACAO)) {
 			System.out.println("Resultado :" + aluno.getAlunoAprovado());
 			System.out.println("media : "+ aluno.getMediaNota());
 			
 			
 		}
 		System.out.println("-----------lista de Reprovados --------------------");
-		for (Aluno aluno : alunosReprovados) {
+		for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 			System.out.println("Resultado :" + aluno.getAlunoAprovado());
 			System.out.println("media : "+ aluno.getMediaNota());
 			
