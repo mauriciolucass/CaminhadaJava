@@ -71,6 +71,16 @@ public class Aluno extends Pessoa {
 			return StatusAluno.REPROVADO;
 		}
 	}
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.pessoaMaiorIdade();
+	}
+	@Override
+	public String mensagemMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.mensagemMaiorIdade();
+	}
 
 	@Override
 	public int hashCode() {

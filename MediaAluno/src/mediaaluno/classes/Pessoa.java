@@ -70,6 +70,12 @@ public class Pessoa {
 	public void setNomePai(String nomePai) {
 		this.nomePai = nomePai;
 	}
+	public boolean pessoaMaiorIdade() {
+		return idade >= 18;
+	}
+	public String mensagemMaiorIdade() {
+		return this.pessoaMaiorIdade() ? "Maior de Idade!" : " Menor de Idade";
+	}
 
 	@Override
 	public int hashCode() {

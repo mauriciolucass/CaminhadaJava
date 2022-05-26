@@ -34,6 +34,16 @@ public class Diretor extends Pessoa{
 	public void setRegistroEducacional(String registroEducacional) {
 		this.registroEducacional = registroEducacional;
 	}
+	@Override
+	public boolean pessoaMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.pessoaMaiorIdade();
+	}
+	@Override
+	public String mensagemMaiorIdade() {
+		// TODO Auto-generated method stub
+		return super.mensagemMaiorIdade();
+	}
 
 	@Override
 	public int hashCode() {
