@@ -2,14 +2,39 @@ package mediaaluno.classes;
 
 import java.util.Objects;
 
-public class Secretario extends Pessoa{
+import mediaalun.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa  implements PermitirAcesso {
 	private String cargo;
 	private String titulacao;
 	private String registroEducacional;
+	private String usuario;
+	private String senha;
 	
 	public Secretario() {
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 
 	public String getCargo() {
 		return cargo;
@@ -70,6 +95,19 @@ public class Secretario extends Pessoa{
 	public String toString() {
 		return "Secretario [cargo=" + cargo + ", titulacao=" + titulacao + ", registroEducacional="
 				+ registroEducacional + "]";
+	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 3000.00 * 0.9;
+	}
+
+
+	@Override
+	public boolean autenticar() {
+		// TODO Auto-generated method stub
+		return usuario.equals("isis")&& senha.equals("123");
 	}
 	
 

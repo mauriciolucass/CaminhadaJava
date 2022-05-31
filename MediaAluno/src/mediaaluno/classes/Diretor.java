@@ -71,6 +71,12 @@ public class Diretor extends Pessoa{
 		return "Diretor [cargo=" + cargo + ", titulacao=" + titulacao + ", registroEducacional=" + registroEducacional
 				+ "]";
 	}
+
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 5000.00;
+	}
 	
 
 }

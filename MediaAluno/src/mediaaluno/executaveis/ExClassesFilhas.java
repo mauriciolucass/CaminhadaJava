@@ -49,10 +49,12 @@ public class ExClassesFilhas {
 		System.out.println("--------------------------------------------------------");
 		System.out.println(diretor.toString());
 		System.out.println(diretor.pessoaMaiorIdade()+ " "+ diretor.mensagemMaiorIdade());
+		System.out.println("salario = " + diretor.salario());
 		System.out.println("--------------------------------------------------------");
 		diretor.pessoaMaiorIdade();
 		System.out.println(secretario.toString());
 		System.out.println(secretario.pessoaMaiorIdade()+ " "+ secretario.mensagemMaiorIdade());
+		System.out.println("salario = " + secretario.salario());
 		secretario.pessoaMaiorIdade();
 		
 		
