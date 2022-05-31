@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
-
 import mediaaluno.classes.Aluno;
 import mediaaluno.classes.Disciplina;
 import mediaaluno.classes.Secretario;
@@ -16,47 +15,20 @@ public class Executavel {
 
 		String usuario = JOptionPane.showInputDialog("iforme o usuario ");
 		String senha = JOptionPane.showInputDialog("iforme a senha  ");
-		Secretario secretario = new Secretario();
-		secretario.setUsuario(usuario);
-		secretario.setSenha(senha);
+		
 
-		if (secretario.autenticar()) {
+		if (new Secretario().autenticar(usuario , senha)) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
 			HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-//		List<Aluno> alunosAprovados = new ArrayList<Aluno>();
-//		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
-//		List<Aluno> alunosReprovados = new ArrayList<Aluno>();	
 			for (int qtd = 1; qtd <= 5; qtd++) {
 				String nome = JOptionPane.showInputDialog("nome do Aluno " + qtd + "?");
-				/*
-				 * String idade = JOptionPane.showInputDialog("idade ?"); String dataNascimento
-				 * = JOptionPane.showInputDialog(" data de nascimento"); String cpf =
-				 * JOptionPane.showInputDialog(" informe o cpf ");
-				 * Seclipse-javadoc:%E2%98%82=MediaAluno/%5C/app%5C/eclipse%5C/plugins%5C/org.
-				 * eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_17.0.2.v20220201-1208%5C/
-				 * jre%5C/lib%5C/jrt-fs.jar%60java.desktop=/module=/true=/=/javadoc_location=/
-				 * https:%5C/%5C/docs.oracle.com%5C/en%5C/java%5C/javase%5C/17%5C/docs%5C/api%5C
-				 * /=/%3Cjavax.swing(JOptionPane.class%E2%98%83JOptionPane~showInputDialog~Ljava
-				 * .lang.Object;%E2%98%82java.lang.Stringtring rg =
-				 * JOptionPane.showInputDialog("informe o RG "); String mae =
-				 * JOptionPane.showInputDialog("nome da Mae ?"); String pai =
-				 * JOptionPane.showInputDialog("nome do pai ?"); String serie =
-				 * JOptionPane.showInputDialog("serie matriculado"); String dataMatricula =
-				 * JOptionPane.showInputDialog("data da matricula"); String escola =
-				 * JOptionPane.showInputDialog("nome da escola ?");
-				 */
+				
 				Aluno aluno1 = new Aluno();
 				aluno1.setNome(nome);
-				/*
-				 * aluno1.setIdade(Integer.valueOf(idade));
-				 * aluno1.setDataNascimento(dataNascimento); aluno1.setNumeroCpf(cpf);
-				 * aluno1.setRegistroGeral(rg); aluno1.setNomeMae(mae); aluno1.setNomePai(pai);
-				 * aluno1.setSerieMatriculado(serie); aluno1.setDataMatricula(dataMatricula);
-				 * aluno1.setNomeEscola(escola);
-				 */
+				
 
 				for (int pos = 1; pos <= 1; pos++) {
 					String nomeDisciplina = JOptionPane.showInputDialog("nome da disciplina " + pos + "?");

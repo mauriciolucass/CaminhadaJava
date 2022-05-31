@@ -36,7 +36,7 @@ public class ExClassesFilhas {
 		Secretario secretario = new Secretario();
 		secretario.setNome(nomeSecretario);
 		secretario.setNumeroCpf(cpfSecretario);
-		secretario.setCargo(cargoSecretario);
+	//	secretario.setCargo(cargoSecretario);
 		secretario.setIdade(Integer.valueOf(idadeSecretario));
 		
 		
