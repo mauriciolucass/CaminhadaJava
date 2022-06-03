@@ -2,14 +2,48 @@ package mediaaluno.classes;
 
 import java.util.Objects;
 
-public class Diretor extends Pessoa{
+import mediaalun.interfaces.PermitirAcesso;
+
+public class Diretor extends Pessoa implements PermitirAcesso{
 	private String cargo;
 	private String titulacao;
 	private String registroEducacional;
 	
-	public Diretor() {
-		// TODO Auto-generated constructor stub
+	
+	private String login;
+	private String senha;
+	
+	
+	public Diretor(String login , String senha) {
+		this.login = login;
+		this.senha = senha;
+		
 	}
+	
+	public Diretor() {
+		
+	}
+	
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 
 	public String getCargo() {
 		return cargo;
@@ -76,6 +110,21 @@ public class Diretor extends Pessoa{
 	public double salario() {
 		// TODO Auto-generated method stub
 		return 5000.00;
+	}
+	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+
+
+
+	@Override
+	public boolean autenticar() {
+		return login.equals("java") && senha.equals("321");		
 	}
 	
 

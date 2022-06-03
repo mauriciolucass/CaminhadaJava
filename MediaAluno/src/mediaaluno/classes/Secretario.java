@@ -8,12 +8,48 @@ public class Secretario extends Pessoa  implements PermitirAcesso {
 	private String cargo;
 	private String titulacao;
 	private String registroEducacional;
+	
+	private String login;
+	private String senha;
+	
+	
 
 	
-	public Secretario() {
-		// TODO Auto-generated constructor stub
+	public String getLogin() {
+		return login;
+	}
+
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	
+	public Secretario() {
+		
+	}
+
+
+
+	public Secretario(String login , String senha) {
+		this.login = login;
+		this.senha = senha;		
+	}
+	
+	
+
 
 	public String getCargo() {
 		return cargo;
@@ -86,9 +122,23 @@ public class Secretario extends Pessoa  implements PermitirAcesso {
 
 	@Override
 	public boolean autenticar(String login, String senha) {
-		// TODO Auto-generated method stub
-		return login.equals("isis" )&& senha.equals("123");
+		
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
 	}
+
+
+
+	@Override
+	public boolean autenticar() {
+		return login.equals("escola") && senha.equals("123");		
+	}
+
+
+
+	
+
 	
 
 }

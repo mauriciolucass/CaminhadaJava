@@ -5,19 +5,21 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
+
 import mediaaluno.classes.Aluno;
+import mediaaluno.classes.Diretor;
 import mediaaluno.classes.Disciplina;
-import mediaaluno.classes.Secretario;
 import mediaaluno.constantes.StatusAluno;
+import mediaaluno.funcoesauxiliares.FuncaoAutenticar;
 
 public class Executavel {
 	public static void main(String[] args) {
 
-		String usuario = JOptionPane.showInputDialog("iforme o usuario ");
+		String login = JOptionPane.showInputDialog("iforme o usuario ");
 		String senha = JOptionPane.showInputDialog("iforme a senha  ");
 		
 
-		if (new Secretario().autenticar(usuario , senha)) {
+		if (new FuncaoAutenticar(new Diretor(login , senha)).autenticar()) {
 
 			List<Aluno> alunos = new ArrayList<Aluno>();
 
@@ -95,6 +97,5 @@ public class Executavel {
 			JOptionPane.showMessageDialog(null, "Acesso negado ");
 		}
 	}
-	
 
 }
