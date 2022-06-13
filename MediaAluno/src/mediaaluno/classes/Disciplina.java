@@ -1,14 +1,25 @@
 package mediaaluno.classes;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Disciplina {
 	private String disciplina;
-	private double nota;
-	
+	private double[] nota = new double[4];	
 	public Disciplina() {
 		// TODO Auto-generated constructor stub
 	}
+	
+
+	public double[] getNota() {
+		return nota;
+	}
+
+
+	public void setNota(double[] nota) {
+		this.nota = nota;
+	}
+
 
 	public String getDisciplina() {
 		return disciplina;
@@ -17,18 +28,22 @@ public class Disciplina {
 	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
-
-	public double getNota() {
-		return nota;
-	}
-
-	public void setNota(double nota) {
-		this.nota = nota;
+	public double getMediaNotas() {
+		double somaTotal = 0;
+		for(int pos = 0; pos < nota.length; pos++) {
+			somaTotal += nota[pos];
+		}
+		return somaTotal / 4;
+		
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(disciplina, nota);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(nota);
+		result = prime * result + Objects.hash(disciplina);
+		return result;
 	}
 
 	@Override
@@ -40,14 +55,9 @@ public class Disciplina {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		return Objects.equals(disciplina, other.disciplina)
-				&& Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
+		return Objects.equals(disciplina, other.disciplina) && Arrays.equals(nota, other.nota);
 	}
 
-	@Override
-	public String toString() {
-		return "Diciplina [disciplina=" + disciplina + ", nota=" + nota + "]";
-	}
 	
 
 }

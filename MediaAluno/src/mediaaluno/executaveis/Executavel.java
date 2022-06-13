@@ -43,7 +43,7 @@ public class Executavel {
 						String nomeNota = JOptionPane.showInputDialog("nota " + pos + "?");
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setNota(Double.valueOf(nomeNota));
+					//	disciplina.setNota(Double.valueOf(nomeNota));
 						aluno1.getDisciplinas().add(disciplina);
 					}
 					int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina");
