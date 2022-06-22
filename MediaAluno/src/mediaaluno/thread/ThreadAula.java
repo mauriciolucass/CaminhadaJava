@@ -5,10 +5,24 @@ import javax.swing.JOptionPane;
 public class ThreadAula {
 	public static void main(String[] args) throws InterruptedException {
 
-		new Thread() {
-			public void run() {// executa o que nos queremos
-				/* codigo da rotina */
-				/* codigo da rotina que eu quero executar em paralelo */
+	Thread  threadEmail = new Thread(thread1);
+	threadEmail.start();
+	Thread threadNfce = new Thread(thread2);
+	threadNfce.start();
+	
+
+		/* o codigo do usuario continua o fluxo de trabalho */
+		// fluxo do sistema
+		JOptionPane.showMessageDialog(null, "O progama continua executando para o usuario");
+
+	}
+	
+         private  static Runnable thread1 = new Runnable() {
+			
+			@Override
+			public void run() {
+				
+				
 				for (int pos = 0; pos <= 10; pos++) {
 					try {
 						Thread.sleep(1000);
@@ -20,14 +34,15 @@ public class ThreadAula {
 
 				} // fim do codigo
 
-			};
-
-		}.start();// Start liga a thread que fica processando paralelamente
+				
+			}
+		};
 		
-		//=====================DIVISAO==============================
-		
-		new Thread() {
-			public void run() {// executa o que nos queremos
+		private static Runnable thread2 = new Runnable() {
+			
+			@Override
+			public void run() {
+			
 				/* codigo da rotina */
 				/* codigo da rotina que eu quero executar em paralelo */
 				for (int pos = 0; pos <= 10; pos++) {
@@ -40,15 +55,7 @@ public class ThreadAula {
 					System.out.println("envio de notas ficais de clientes");
 
 				} // fim do codigo
-
-			};
-
-		}.start();// Start liga a thread que fica processando paralelamente
-
-		/* o codigo do usuario continua o fluxo de trabalho */
-		// fluxo do sistema
-		JOptionPane.showMessageDialog(null, "O progama continua executando para o usuario");
-
-	}
+			}
+		};
 
 }
