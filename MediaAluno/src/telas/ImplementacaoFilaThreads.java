@@ -13,17 +13,14 @@ public class ImplementacaoFilaThreads extends Thread {
 	@Override
 	public void run() {
 		System.out.println("fila rodando!");
-		
 
 		while (true) {
-			
 
 			synchronized (pilha_filha) {// bloquear a esta lista por outro processo
 				Iterator iteracao = pilha_filha.iterator();
 				while (iteracao.hasNext()) {/* enquanto tiver dados sera processado */
 					ListaThreads processar = (ListaThreads) iteracao.next();
-					
-					
+
 					/* aqui dentro escrevemos a rotina */
 
 					// gera envio de notas fiscais
